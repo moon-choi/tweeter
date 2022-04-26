@@ -22,6 +22,12 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- char counter -->
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script> 
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -35,6 +41,8 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"></script>
+
+
   </head>
 
   <body>
@@ -44,9 +52,9 @@
         <div class="logo">
           <span>tweeter</span>
         </div>
-        <div class="new-tweet">
+        <div class="nav-right">
           <span><strong>Write</strong> a new tweet</span>
-          <i class="fa-solid fa-angles-down fa-1x"></i>
+          <i id="nav-arrow" class="fa-solid fa-angles-down fa-1x"></i>
         </div>
 
       </div>
@@ -67,23 +75,43 @@
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets">
           <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <textarea name="tweet-text" id="tweet-text"></textarea>
           <div class="under-tweet">
             <span>
               <button class="tweet-button" type="submit">Tweet</button>
             </span>
             <span>
-              <output name="counter" class="counter" for="tweet-text"
-                >140</output
-              >
+              <output id = "counter" name="counter" class="counter" for="tweet-text"
+                >140</output>
             </span>
           </div>
         </form>
       </section>
       <div>
-        <p>
-          All the Lorem Ipsum generators on the Internet tend to repeat predefined. All the Lorem Ipsum generators on the Internet tend to repeat predefined.All the Lorem Ipsum generators on the Internet tend to repeat predefined.All the Lorem Ipsum generators on the Internet tend to repeat predefined. 
-        </p>
+      <article class="article">
+        <div class="article-header">
+          <div class="article-header-left">
+            <div class="tweet-creator"></div>
+              <i class="fa-solid fa-user"></i>
+              <label>Newton</label>
+            </div>            
+            <div class="tweet-handle">
+              <label>@SirIssac</label>
+            </div>
+          </div>
+          <p class="tweet-body">If I have seen further it is by standing on the shoulders of giants</p>
+          <hr class="tweet-line">
+          <div class="article-footer">
+          <output>10 days ago</output>
+          <div class="article-footer-icons">
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-flag"></i>
+          </div>  
+        </div>
+        </div>
+   
+      </article>
       </div>
       </main>
     </main>

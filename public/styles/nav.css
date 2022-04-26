@@ -19,14 +19,14 @@ nav {
   margin-right: 1.5em;
 }
 
-.new-tweet {
+.nav-right {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: "Source Sans Pro", sans-serif;
 }
 
-i {
+#nav-arrow {
   color: red;
   display: block;
 }

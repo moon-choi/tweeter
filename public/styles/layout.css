@@ -22,9 +22,9 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 24px;
 }
+
 textarea {
   border: none;
-  border-bottom: 2px solid black;
   width: 100%;
   color: #7a7770;
   border-bottom: 3px solid #7a7770;
@@ -34,6 +34,7 @@ textarea {
 }
 
 main {
+  margin-bottom: 10vh;
   margin-left: 4vw;
   margin-right: 4vw;
   align-items: center;
@@ -53,16 +54,52 @@ main {
   color: #ffffff;
 }
 
-.line {
-  width: 100%;
-  color: #7a7770;
-  border-bottom: 3px solid #7a7770;
-  margin-left: auto;
-  margin-right: auto;
-  /* background-color: #b7d0e2; */
+.counter {
+  font-family: "Bungee", cursive;
 }
 
 .avatar {
   padding-top: 120px;
   height: 400px;
+}
+
+.fa-solid {
+  color: #4056a1;
+}
+
+.tweet-creator {
+  display: flex;
+  justify-content: space-between;
+}
+
+article {
+  /* border-color: black;
+  border-width: 3px; */
+  border: 3px solid #7a7770;
+  padding: 20px;
+}
+
+article:hover {
+  box-shadow: 5px 5px 0px 0px #a69ee5, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+.article-header {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.article-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-solid:hover {
+  color: #d7981e;
+}
+
+.tweet-line {
+  border: none;
+  border-bottom: 3px solid #7a7770;
+  padding: 20px;
 }
