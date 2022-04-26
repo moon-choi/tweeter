@@ -6,7 +6,9 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -17,9 +19,50 @@ html {
 body {
   color: #545149;
   background-color: #f4f1ec;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 24px;
 }
+textarea {
+  border: none;
+  border-bottom: 2px solid black;
+  width: 100%;
+  color: #7a7770;
+  border-bottom: 3px solid #7a7770;
+  background-color: transparent;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+main {
+  margin-left: 4vw;
+  margin-right: 4vw;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f1ec;
+  background-image: url(http://www.transparenttextures.com/patterns/asfalt-light.png);
+}
+
+.under-tweet {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet-button {
+  font-family: "Bungee", cursive;
+  background-color: #4056a1;
+  color: #ffffff;
+}
+
+.line {
+  width: 100%;
+  color: #7a7770;
+  border-bottom: 3px solid #7a7770;
+  margin-left: auto;
+  margin-right: auto;
+  /* background-color: #b7d0e2; */
+}
+
+.avatar {
+  padding-top: 120px;
+  height: 400px;
+}
