@@ -12,10 +12,9 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
-
+header {
+  margin-bottom: 50px;
+}
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -31,6 +30,7 @@ textarea {
   background-color: transparent;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 10px;
 }
 
 main {
@@ -48,6 +48,10 @@ main {
   justify-content: space-between;
 }
 
+#tweet-text {
+  font-weight: bold;
+}
+
 .tweet-button {
   font-family: "Bungee", cursive;
   background-color: #4056a1;
@@ -63,33 +67,35 @@ main {
   height: 400px;
 }
 
+.tweet-avatar {
+  height: 25px;
+  width: 25px;
+}
+
 .fa-solid {
   color: #4056a1;
 }
 
-.tweet-creator {
-  display: flex;
-  justify-content: space-between;
-}
-
-article {
-  /* border-color: black;
-  border-width: 3px; */
+.tweet {
+  margin-top: 50px;
   border: 3px solid #7a7770;
   padding: 20px;
 }
 
-article:hover {
+.tweet:hover {
   box-shadow: 5px 5px 0px 0px #a69ee5, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
-.article-header {
+.tweet-header {
   display: flex;
-
   justify-content: space-between;
 }
 
-.article-footer {
+.header-left {
+  display: flex;
+  flex-direction: column;
+}
+.tweet-footer {
   display: flex;
   justify-content: space-between;
 }
@@ -102,4 +108,21 @@ article:hover {
   border: none;
   border-bottom: 3px solid #7a7770;
   padding: 20px;
+}
+
+.createdAt {
+  font-size: 15px;
+}
+
+.handle-label {
+  color: lightgrey;
+  font-weight: bold;
+}
+
+.humming-label {
+  font-weight: bold;
+}
+
+.article-footer-icons {
+  font-size: smaller;
 }

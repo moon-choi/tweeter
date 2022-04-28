@@ -1,13 +1,12 @@
 "use strict";
 
-const userHelper    = require("../lib/util/user-helper")
+const userHelper = require("../lib/util/user-helper");
 
-const express       = require('express');
-const tweetsRoutes  = express.Router();
+const express = require("express");
+const tweetsRoutes = express.Router();
 
-module.exports = function(DataHelpers) {
-
-  tweetsRoutes.get("/", function(req, res) {
+module.exports = function (DataHelpers) {
+  tweetsRoutes.get("/", function (req, res) {
     DataHelpers.getTweets((err, tweets) => {
       if (err) {
         res.status(500).json({ error: err.message });
@@ -17,19 +16,22 @@ module.exports = function(DataHelpers) {
     });
   });
 
-  tweetsRoutes.post("/", function(req, res) {
+  tweetsRoutes.post("/", function (req, res) {
     if (!req.body.text) {
-      res.status(400).json({ error: 'invalid request: no data in POST body'});
+      res.status(400).json({ error: "invalid request: no data in POST body" });
       return;
     }
 
-    const user = req.body.user ? req.body.user : userHelper.generateRandomUser();
+    const user = req.body.user
+      ? req.body.user
+      : userHelper.generateRandomUser();
     const tweet = {
-      user: user,
+      user: user, //req.body.user
       content: {
-        text: req.body.text
+        text: req.body.text,
+        //this is the form - name attribute in tweets.js
       },
-      created_at: Date.now()
+      createdAt: Date.now(),
     };
 
     DataHelpers.saveTweet(tweet, (err) => {
@@ -42,5 +44,32 @@ module.exports = function(DataHelpers) {
   });
 
   return tweetsRoutes;
+};
 
-}
+//NOTE
+/*
+const data = [
+  {
+    user: {
+      name: "Newton",
+      avatars: "https://i.imgur.com/73hZDYK.png",
+      handle: "@SirIsaac",
+    },
+    content: {
+      text: "If I have seen further it is by standing on the shoulders of giants",
+    },
+    created_at: 1461116232227,
+  },
+  {
+    user: {
+      name: "Descartes",
+      avatars: "https://i.imgur.com/nlhLi3I.png",
+      handle: "@rd",
+    },
+    content: {
+      text: "Je pense , donc je suis",
+    },
+    created_at: 1461113959088,
+  },
+];
+*/
