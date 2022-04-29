@@ -23,9 +23,6 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
-    <script>
-      $("body").empty();
-    </script>
     <!-- jQuery -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
@@ -87,6 +84,8 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <label class="error" id="error-1">Too many characters!</label>
+        <label class="error" id="error-2">Type Something!</label>
         <form id="tweet-form" method="POST" action="/tweets">
           <textarea
             name="text"

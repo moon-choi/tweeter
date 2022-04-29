@@ -56,51 +56,43 @@ const renderTweets = function (data) {
 const loadTweets = function () {
   $.ajax({
     type: "GET",
-    url: "/tweets/",
-    success: (response) => {
-      renderTweets(response);
-    },
+    url: "http://localhost:8081/tweets",
+    // success: (response) => {
+    //   renderTweets(response);
+  }).then((result) => {
+    renderTweets(result);
   });
 };
 
-// $.ajax("http://localhost:8081/tweets", { method: "GET" }) //.ajax is an api call.
-//   .then(function (APIcallback) {
-//     renderTweets(APIcallback);
-//   });
-// //.then takes a callback. when promise resolves you get a result..
-// // console.log("Success: ", apiResponse);
-
 $(document).ready(function () {
-  loadTweets(); // load up the existing ones before posting a new tweet.
-
+  // loadTweets(); // load up the existing ones before posting a new tweet.
+  $(".error").hide();
   // renderTweets(data); //hardcoded object, testing.
   $("#tweet-form").submit(function (e) {
-    e.preventDefault(); //preventing res.status(201).send();
-    // console.log($("#tweet-text"));
+    e.preventDefault(); //preventing res.status(201).send()
+    $(".error").hide();
     if (Number($("#tweet-form").find(".counter").text()) < 0) {
-      return alert("too many characters");
+      // return alert("too many characters");
+      $("#error-1").slideDown();
     } else if (Number($("#tweet-form").find(".counter").text()) >= 140) {
-      return alert("type something!");
+      // return alert("type something!");
+      $("#error-2").slideDown();
+    } else {
+      const result = $("#tweet-text").serialize(); //textarea=whatever&xyz
+      $.ajax({
+        type: "POST",
+        url: "http://localhost:8081/tweets",
+        data: result,
+      }).then(() => {
+        $("#tweet-text").val("");
+        $(".counter").text(140);
+        loadTweets();
+      });
     }
 
-    const result = $("#tweet-text").serialize(); //textarea=whatever&xyz
-    // $.ajax({
-    //   type: "POST",
-    //   url: "http://localhost:8081/tweets",
-    //   data: result,
-    // });
-
-    $.post("/tweets", result).done(() => {
-      //just posting the new tweet
-      $.get("/tweets", function (data) {
-        //just getting the new tweet
-        renderTweets(data);
-      });
-    });
     // have to reset inside .submit because evertime we trigger 'submit' we want this to be cleared. if I do it outside submit, it won't run.
-    $("#tweet-text").val("");
-    $(".counter").text(140);
   });
+  loadTweets();
 });
 
 // Questions - Mentor: Reinhardt Cagara
