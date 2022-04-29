@@ -15,7 +15,6 @@
     "chance": "^1.1.8",
     "express": "^4.17.3",
     "md5": "^2.3.0",
-    "timeago": "^1.6.7",
     "timeago.js": "^4.0.2"
   },
   "devDependencies": {

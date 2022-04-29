@@ -43,15 +43,18 @@ const createTweetElement = function (data) {
   return tweetsDOM;
 };
 
+// 컨테이너에 붙이겠다
 //2. render (displaying html but also adding in the data being looped through to the html)
 const renderTweets = function (data) {
   $(".tweets-container").empty();
   for (const el of data) {
+    //3개 (데카르트+)
     //array - each item is an object that contains user, content, createdAt
     $(".tweets-container").prepend(createTweetElement(el)); //el is an object that has 3 contents.
   }
 };
 
+// 만들어진 것을 보여주겠다 띄우겠다
 //3. load
 const loadTweets = function () {
   $.ajax({
@@ -60,6 +63,7 @@ const loadTweets = function () {
     // success: (response) => {
     //   renderTweets(response);
   }).then((result) => {
+    //  $(".tweets-container").empty();
     renderTweets(result);
   });
 };
@@ -86,13 +90,12 @@ $(document).ready(function () {
       }).then(() => {
         $("#tweet-text").val("");
         $(".counter").text(140);
-        loadTweets();
+        loadTweets(); //데카르트 + 새로운 트윗들 (섭밋눌렀을때)
       });
     }
-
     // have to reset inside .submit because evertime we trigger 'submit' we want this to be cleared. if I do it outside submit, it won't run.
   });
-  loadTweets();
+  loadTweets(); // 하얀화면 트위터박스밑에.
 });
 
 // Questions - Mentor: Reinhardt Cagara
