@@ -12,14 +12,89 @@ html {
   box-sizing: inherit;
 }
 
-header {
-  margin-bottom: 50px;
+.tweet-avatar {
+  height: 25px;
+  width: 25px;
 }
+
+.tweet-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+}
+.tweet-footer {
+  display: flex;
+  justify-content: space-between;
+}
+.createdAt {
+  font-size: 15px;
+}
+
+.handle-label {
+  color: lightgrey;
+  font-weight: bold;
+}
+
+.humming-label {
+  font-weight: bold;
+}
+
+.article-footer-icons {
+  font-size: smaller;
+}
+
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 24px;
+}
+
+.under-tweet {
+  display: flex;
+  justify-content: space-between;
+}
+
+#tweet-text {
+  font-weight: bold;
+}
+
+.tweet-button {
+  font-family: "Bungee", cursive;
+  background-color: #4056a1;
+  color: #ffffff;
+}
+
+.counter {
+  font-family: "Bungee", cursive;
+}
+
+.fa-solid:hover {
+  color: #d7981e;
+}
+
+.tweet-line {
+  border: none;
+  border-bottom: 3px solid #7a7770;
+  padding: 20px;
+}
+
+.fa-solid {
+  color: #4056a1;
+}
+
+.tweet {
+  margin-top: 50px;
+  border: 3px solid #7a7770;
+  padding: 20px;
+}
+
+.tweet:hover {
+  box-shadow: 5px 5px 0px 0px #a69ee5, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 textarea {
@@ -42,87 +117,37 @@ main {
   background-color: #f4f1ec;
   background-image: url(http://www.transparenttextures.com/patterns/asfalt-light.png);
 }
-
-.under-tweet {
-  display: flex;
-  justify-content: space-between;
+@media only screen and (min-width: 1024px) {
+}
+@media only screen and (min-width: 768px) {
+  body {
+    display: flex;
+  }
+  
+  main {
+    margin-top: 15%;
+    float: right;
+    width: 60%;
+  }
 }
 
-#tweet-text {
-  font-weight: bold;
+/* Smartphones: minimum width of 320px to maximum width of around 420px */
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  /* Write smartphone only styles here */
+  .container {
+    padding-top: 50px;
+  }
 }
 
-.tweet-button {
-  font-family: "Bungee", cursive;
-  background-color: #4056a1;
-  color: #ffffff;
-}
+/* Another smartphone breakpoint is maximum width of around 420px */
+@media only screen and (max-width: 420px) {
+  /* Write smartphone only styles here */
 
-.counter {
-  font-family: "Bungee", cursive;
-}
+  .write {
+    display: none;
+  }
 
-.avatar {
-  padding-top: 120px;
-  height: 400px;
-}
-
-.tweet-avatar {
-  height: 25px;
-  width: 25px;
-}
-
-.fa-solid {
-  color: #4056a1;
-}
-
-.tweet {
-  margin-top: 50px;
-  border: 3px solid #7a7770;
-  padding: 20px;
-}
-
-.tweet:hover {
-  box-shadow: 5px 5px 0px 0px #a69ee5, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-}
-
-.tweet-header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.header-left {
-  display: flex;
-  flex-direction: column;
-}
-.tweet-footer {
-  display: flex;
-  justify-content: space-between;
-}
-
-.fa-solid:hover {
-  color: #d7981e;
-}
-
-.tweet-line {
-  border: none;
-  border-bottom: 3px solid #7a7770;
-  padding: 20px;
-}
-
-.createdAt {
-  font-size: 15px;
-}
-
-.handle-label {
-  color: lightgrey;
-  font-weight: bold;
-}
-
-.humming-label {
-  font-weight: bold;
-}
-
-.article-footer-icons {
-  font-size: smaller;
+  #nav-arrow {
+    display: none;
+  }
 }

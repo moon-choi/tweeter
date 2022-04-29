@@ -4,7 +4,6 @@ header {
   background-image: url(http://www.transparenttextures.com/patterns/asfalt-light.png);
 }
 
-
 .avatar {
   /* display: block;
   margin-left: auto;
@@ -20,4 +19,25 @@ header {
   align-items: center;
   justify-content: center;
   color: white;
+}
+
+@media only screen and (min-width: 768px) {
+  .avatar {
+    padding-top: 100px;
+    height: 400px;
+  }
+
+  header {
+    float: left;
+    width: 40%;
+    margin-top: 15%;
+    margin-left: 5%;
+    margin-bottom: 50px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .avatar {
+    padding-top: 100px;
+  }
 }

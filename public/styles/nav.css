@@ -4,6 +4,7 @@ nav {
   background-color: #4056a1;
   color: #ffffff;
   position: fixed;
+  z-index: 0;
 }
 
 .logo {
@@ -13,7 +14,6 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
   margin-top: 1.5em;
   margin-left: 1.5em;
   margin-right: 1.5em;
@@ -36,4 +36,16 @@ input {
   border: none;
   margin: auto;
   display: block;
+}
+
+@media only screen and (max-width: 768px) {
+  nav {
+    background-color: #d7981e;
+    background-image: url(http://www.transparenttextures.com/patterns/asfalt-light.png);
+    color: white;
+  }
+
+  img {
+    padding-top: 50px;
+  }
 }
