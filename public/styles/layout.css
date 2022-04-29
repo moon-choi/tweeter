@@ -12,9 +12,17 @@ html {
   box-sizing: inherit;
 }
 
+form {
+  margin-top: 20px;
+}
+
+.error {
+  color: red;
+}
+
 .tweet-avatar {
-  height: 25px;
-  width: 25px;
+  margin-right: 10px;
+  height: 35px;
 }
 
 .tweet-header {
@@ -24,8 +32,8 @@ html {
 
 .header-left {
   display: flex;
-  flex-direction: column;
 }
+
 .tweet-footer {
   display: flex;
   justify-content: space-between;
@@ -117,13 +125,12 @@ main {
   background-color: #f4f1ec;
   background-image: url(http://www.transparenttextures.com/patterns/asfalt-light.png);
 }
-@media only screen and (min-width: 1024px) {
-}
+
 @media only screen and (min-width: 768px) {
   body {
     display: flex;
   }
-  
+
   main {
     margin-top: 15%;
     float: right;
@@ -136,7 +143,6 @@ main {
   /* Write smartphone only styles here */
   .container {
     padding-top: 50px;
-  }
 }
 
 /* Another smartphone breakpoint is maximum width of around 420px */
